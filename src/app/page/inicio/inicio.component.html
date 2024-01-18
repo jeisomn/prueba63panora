@@ -1,0 +1,34 @@
+
+<h1>Clientes</h1>
+
+<form>
+    <table>
+        <tr>
+            <td>Cedula</td>
+            <td><input type="text" name="txtCodigo" [(ngModel)]="per.Cedula"></td>
+    <td><button (click)="guardar()">Buscar</button></td>
+    </table>
+</form>
+
+<hr/>
+
+<table>
+    <tr>
+        <th>Código</th>
+        <th>Cedula</th>
+        <th>Nombre/th>
+        <th>Mes</th>
+        <th>Cantidad</th>
+        <th>Eliminar</th>
+
+    </tr>
+    <tr *ngFor="let per of personas | async">
+        <td>{{per.codigo}}</td>
+        <td>{{per.cedula}}</td>
+        <td>{{per.nombre}}</td>
+        <td>{{per.mes}}</td>
+        <td>{{per.cantidad}}</td>
+        <td> <button class="delete" (click)="eliminar(per.codigo)"> Eliminar Cliente</button></td>
+    </tr>
+
+</table>
